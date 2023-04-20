@@ -1,9 +1,10 @@
-import Client from "./client";
-
+import { Client } from "./client.js";
+import { SecondButton } from "./client.js";
 let button = document.getElementById("id_1");
 button.addEventListener("click", function () {
   let p = new Client();
-  p.promise();
+  const a = p.promiseFetch;
+  console.log(a);
   let div = document.getElementById("form-id");
   let d = document.createElement("div");
   d.id = "div-id";
@@ -18,16 +19,9 @@ button.addEventListener("click", function () {
 let feedback_btn = document.getElementById("id_2");
 
 feedback_btn.addEventListener("click", function () {
-  let promise = fetch(
-    "https://8ae77586-f048-466a-a00a-8c3a29c5e79a.mock.pstmn.io/feedback"
-  );
-  promise
-    .then((response) => {
-      return response.json();
-    })
-    .then((value) => {
-      console.log(value);
-    });
+  let q = new SecondButton();
+  const b = q.secondPromiseFetch;
+  console.log(b);
   let div = document.getElementById("form-id");
   let form = document.createElement("form");
   form.id = "form";
